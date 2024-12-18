@@ -1,0 +1,200 @@
+0: - Any -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+37: Entrepreneurial awards
+38: Financial need awards/bursaries
+39: International experience awards
+40: Research awards
+41: Scholarships/awards
+
+43: Year One
+44: Year Two
+45: Year Three
+46: Year Four
+47: Canadian citizen/permanent resident
+
+49: International/study permit student
+
+51: Open to any program
+52: Health
+53: -Kinesiology
+54: -Public Health and Health Sciences
+55: -Recreation and Leisure Studies
+56: Arts
+57: -Accounting and Financial Mgmt
+58: -Anthropology
+59: -Classical Studies
+60: Computing and Financial Mgmt
+61: -Communication Arts
+62: -Economics
+63: -English Language and Literature
+64: -Fine Arts
+65: -French Studies
+66: -Germanic and Slavic Studies
+67: -Global Business and Digital Arts
+68: -History
+
+70: -Medieval Studies
+71: -Music
+72: -Peace and Conflict Studies
+73: -Philosophy
+74: -Political Science
+75: -Psychology
+76: -Religious Studies
+
+78: -Sexuality, Marriage and Family Studies
+79: -Social Development Studies
+80: -Sociology and Legal Studies
+81: -Spanish and Latin American Studies
+82: -Gender and Social Justice
+83: Engineering
+84: -Biomedical Engineering
+85: -Chemical Engineering
+86: -Civil Engineering
+87: -Computer Engineering
+88: -Electrical Engineering
+89: -Environmental Engineering
+90: -Geological Engineering
+91: -Management Engineering
+92: -Mechanical Engineering
+93: -Mechatronics Engineering
+
+95: Software Engineering
+96: -Systems Design Engineering
+97: Environment
+98: -Environment and Business
+99: -Environment, Resources and Sustainability
+100: -Geography and Environmental Mgmt
+101: -Geography and Aviation
+102: -Geomatics
+103: -International Development
+104: -Knowledge Integration
+105: -Planning
+106: Mathematics
+107: -Actuarial Science
+108: -Applied Mathematics
+109: -Bioinformatics
+110: -Business and CS (Double Degree)
+111: -Business and Math (Double Degree)
+112: -Combinatorics and Optimization
+113: -Computer Science
+
+115: -Information Technology Mgmt
+116: -Math/Fin.Analysis and Risk Mgmt
+117: -Mathematical Economics
+118: -Mathematical Finance
+119: -Mathematical Optimization
+120: -Mathematical Physics
+121: -Mathematics
+122: -Mathematics/Business Admin
+123: -Mathematics/CPA
+124: -Mathematics/Teaching
+
+126: -Pure Mathematics
+127: -Scientific Computation/Applied Mathematics
+128: -Statistics
+129: Science
+130: -Biology
+131: -Biotechnology/CPA
+132: -Biotechnology/Economics
+133: -Chemistry
+134: -Earth and Environmental Sciences
+135: -Optometry
+136: -Pharmacy
+137: -Physics and Astronomy
+138: -Science and Business
+139: -Science and Aviation
+140: Application required
+141: Students considered automatically - no application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+163: Fall
+164: Winter
+165: Spring
+
+
+168: -International Trade (minor)
+
+170: -Nanotechnology Engineering
+171: -Architecture
+172: -Psychology
+173: -Science
+
+
+176: -Biomedical Sciences
+177: -Biochemistry
+178: -Materials and Nanosciences
+179: -Medicinal Chemistry
+180: -Mathematical Physics
+181: Varsity athlete
+182: Mature learner
+183: Ontario first generation
+184: Part-time learner
+185: Indigenous
+
+257: Refugee
+258: Woman
+266: Nomination required
+267: Medals/Prizes
+268: Other travel funding
+269: -Liberal Studies
+271: -Computational Mathematics
+273: Athletic awards
+275: -Architectural Engineering
+291: Black
+296: Sustainability and Financial Management
+299: -Data Science
+301: -Climate and Environmental Change
+302: -Arts and Business

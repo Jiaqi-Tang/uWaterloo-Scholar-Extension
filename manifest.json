@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "uWaterloo scholarships",
+  "version": "1.0",
+  "description": "Change text and styling of a webpage",
+  "content_scripts": [
+    {
+      "matches": ["https://uwaterloo.ca/student-awards-financial-aid/awards/search-results*"],
+      "js": ["content-general.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://localhost/*",
+    "https://localhost/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["data.json"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+  }
+}
