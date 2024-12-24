@@ -164,52 +164,6 @@ document.querySelectorAll('div.views-row').forEach(item => {
         // Get the href attribute
         const href = link.getAttribute('href');
 
-        // Send the href as part of the data in the request body
-        fetch(`http://localhost:5000/api/get-preview?link=${encodeURIComponent(href)}`,
-        {
-              method: 'GET',  // GET method for reading data
-              headers: {
-                  'Content-Type': 'application/json'  // Expect JSON in the response
-              }
-        })
-        .then(response => response.json())  // Parse the JSON response
-        .then(data => {
-            item.children[1].remove();
-
-            const description = data.description;
-            const deadline = data.deadline;
-            const value = data.value;
-            const additionalTags = data.additional_tags;
-
-
-            const valueSection = document.createElement('div');
-            const deadlineSection = document.createElement('div');
-            const tagsSection = document.createElement('div');
-
-            const wrapperSection = document.createElement('div');
-            const outPaddingSection = document.createElement('div');
-
-            // Add content to the new subsection
-            valueSection.textContent = "Value: " + value;
-            deadlineSection.textContent = "Deadline: " + deadline;
-            tagsSection.textContent = "Tags: " + additionalTags;
-
-            valueSection.classList.add('views-field', 'views-field-award-value');
-            deadlineSection.classList.add('views-field', 'views-field-award-deadline');
-            tagsSection.classList.add('views-field', 'views-field-award-tags');
-            wrapperSection.classList.add('views-field-wrapper')
-
-
-
-            // Append the new subsection to the parent div
-            wrapperSection.appendChild(valueSection);
-            wrapperSection.appendChild(deadlineSection);
-            item.appendChild(wrapperSection);
-            item.appendChild(tagsSection);
-        })  // Handle the server response
-        .catch(error => console.error('Error:', error));  // Handle errors
-
-
         item.addEventListener('click', function() {
             const otherActive = item.parentElement.querySelector('.active-award');
             item.classList.toggle('active-award');
