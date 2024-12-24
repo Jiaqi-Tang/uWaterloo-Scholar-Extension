@@ -1,9 +1,8 @@
 import logging
 
 from flask import Flask, request, jsonify
-from web_crawler import *
-from flask_cors import CORS, cross_origin
-
+from crawler.web_crawler import *
+from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app, origins=BASE_URL)

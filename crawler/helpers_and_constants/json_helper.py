@@ -1,5 +1,5 @@
 import json
-from scholarship import Scholarship
+from crawler.scholarship import Scholarship
 
 
 class CustomEncoder(json.JSONEncoder):

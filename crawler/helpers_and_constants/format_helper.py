@@ -1,6 +1,6 @@
 from enum import Enum
-from helpers_and_constants.dict import *
-from helpers_and_constants.error_logging_helper import *
+from crawler.helpers_and_constants.dict import *
+
 
 # Define the Field Enum
 class Field(Enum):
