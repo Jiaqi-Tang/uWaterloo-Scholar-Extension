@@ -48,12 +48,16 @@ body {
     width: 85%;
 }
 
+
+
 .uw-site-sidebar--wrapper{
     position: fixed;
     top: 30px;
     bottom: 30px;
-    left: 52%;
-    width: 37% !important;
+    right: 30px;
+    /*left: 52%;*/
+    width: 45% !important;
+    background-color: transparent !important;
 }
 
 .view-pane--wrapper{
@@ -73,6 +77,10 @@ body {
 
     overflow-y: auto; /* Vertical scrolling only */
     overflow-x: hidden;
+}
+
+.uw-site-main--content form {
+    margin-top: 0px !important;
 }
 
 .view-pane{
@@ -108,11 +116,73 @@ body {
   cursor: pointer;
 }
 
-/*  closeButton.style.fontSize = '20px';  // Set font size for the button */
-/*                              closeButton.style.background = 'transparent'; */
-/*                              closeButton.style.border = 'none'; */
-/*                              closeButton.style.cursor = 'pointer'; */
-/*                              closeButton.style.position = 'absolute'; */
-/*                              closeButton.style.right = '10px';  // Position it on the right side */
-/*                              closeButton.style.top = '50%'; */
-/*                              closeButton.style.transform = 'translateY(-50%)'; */
+/* ------------------------------------------------------------------------------------------ */
+/* Form Container */
+.views-exposed-form {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  position: absolute;
+  top: 0px; /* Adjust position */
+  left: 20px;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  overflow-y: auto; /* Vertical scrolling only */
+  overflow-x: hidden;
+}
+
+/* Labels */
+.views-exposed-form label {
+  font-weight: bold;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Inputs and Select */
+.views-exposed-form select {
+  width: 100%;
+  /*padding: 10px;*/
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  background: #f8f8f8;
+}
+
+.views-exposed-form select:focus {
+  border-color: #007BFF;
+  outline: none;
+  background: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styling */
+.views-exposed-form input {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #007BFF;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.views-exposed-form input:hover {
+  background-color: #0056b3;
+}
+
+#views-exposed-form-uw-undergrad-award-search-block-page #edit-reset {
+    margin-top: 0px !important;
+}
+
+
+

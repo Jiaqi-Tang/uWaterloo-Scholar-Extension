@@ -69,8 +69,43 @@ defaultHtml = `
     </div>
     `;
 
+const fallApplyHTML = `
+<aside>
+    <a href="https://uwaterloo.ca/the-centre/forms-and-official-documents/forms-undergraduate-students/fall-term-undergraduate-award-application">
+        <div class="call-to-action-wrapper cta-two">
+            <div class="call-to-action-theme-uWaterloo">
+                <div class="call-to-action-big-text">Fall Term Undergraduate Award Application</div>
+            </div>
+        </div>
+    </a>
+</aside>`
+
+const winterApplyHTML = `
+<aside>
+    <a href="https://uwaterloo.ca/the-centre/forms-and-official-documents/forms-undergraduate-students/winter-term-undergraduate-award-application">
+        <div class="call-to-action-wrapper cta-two">
+            <div class="call-to-action-theme-uWaterloo">
+                <div class="call-to-action-big-text">Winter Term Undergraduate Award Application</div>
+            </div>
+        </div>
+    </a>
+</aside>`
+
+const springApplyHTML = `
+<aside>
+    <a href="https://uwaterloo.ca/the-centre/forms-and-official-documents/forms-undergraduate-students/spring-term-undergraduate-award-application">
+        <div class="call-to-action-wrapper cta-two">
+            <div class="call-to-action-theme-uWaterloo">
+                <div class="call-to-action-big-text">Spring Term Undergraduate Award Application</div>
+            </div>
+        </div>
+    </a>
+</aside>`
+
+
 document.getElementById("site-navigation-wrapper").remove();
 
+// Added Right panel for preview
 const sideBar = document.getElementById("site-sidebar-wrapper");
 const wrapper = document.createElement('div');
 wrapper.classList.add('view-pane--wrapper');
@@ -81,7 +116,31 @@ viewAwardPane.classList.add('view-pane');
 viewAwardPane.innerHTML = defaultHtml;
 wrapper.appendChild(viewAwardPane);
 
+// Added link to applications
+const sideFormWrapper = document.getElementById("views-exposed-form-uw-undergrad-award-search-block-page");
+const sideForm = sideFormWrapper.firstElementChild.firstElementChild;
+const fallApplyButton = document.createElement('div');
+fallApplyButton.innerHTML = fallApplyHTML;
+sideForm.appendChild(fallApplyButton);
+const winterApplyButton = document.createElement('div');
+winterApplyButton.innerHTML = winterApplyHTML;
+sideForm.appendChild(winterApplyButton);
+const springApplyButton = document.createElement('div');
+springApplyButton.innerHTML = springApplyHTML;
+sideForm.appendChild(springApplyButton);
+
+
 const headerHeight = 170;
+
+let scrollPosition = window.scrollY;
+
+// If the scroll position is greater than the header's height, stop the pane from going up
+if (scrollPosition <= headerHeight) {
+sideBar.style.top = `${headerHeight - scrollPosition + 30}px`;  // Adjust top to prevent overlap
+} else {
+// Otherwise, keep the right pane fixed at the top
+sideBar.style.top = '30px';
+}
 
 window.addEventListener('scroll', function() {
   // Get the scroll position from the top
