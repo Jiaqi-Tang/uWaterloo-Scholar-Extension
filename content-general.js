@@ -130,33 +130,27 @@ springApplyButton.innerHTML = springApplyHTML;
 sideForm.appendChild(springApplyButton);
 
 
+// Ensures that panel does not block header
 const headerHeight = 170;
-
 let scrollPosition = window.scrollY;
-
-// If the scroll position is greater than the header's height, stop the pane from going up
-if (scrollPosition <= headerHeight) {
-sideBar.style.top = `${headerHeight - scrollPosition + 30}px`;  // Adjust top to prevent overlap
-} else {
-// Otherwise, keep the right pane fixed at the top
-sideBar.style.top = '30px';
+if (scrollPosition <= headerHeight) {// If the scroll position is greater than the header's height, stop the pane from going up
+    sideBar.style.top = `${headerHeight - scrollPosition + 30}px`;  // Adjust top to prevent overlap
+} else {// Otherwise, keep the right pane fixed at the top
+    sideBar.style.top = '30px';
 }
 
 window.addEventListener('scroll', function() {
-  // Get the scroll position from the top
+    // Get the scroll position from the top
+    let scrollPosition = window.scrollY;
 
-  let scrollPosition = window.scrollY;
-
-  // If the scroll position is greater than the header's height, stop the pane from going up
-  if (scrollPosition <= headerHeight) {
-    sideBar.style.top = `${headerHeight - scrollPosition + 30}px`;  // Adjust top to prevent overlap
-  } else {
-    // Otherwise, keep the right pane fixed at the top
-    sideBar.style.top = '30px';
-  }
+    if (scrollPosition <= headerHeight) {// If the scroll position is greater than the header's height, stop the pane from going up
+        sideBar.style.top = `${headerHeight - scrollPosition + 30}px`;  // Adjust top to prevent overlap
+    } else {// Otherwise, keep the right pane fixed at the top
+        sideBar.style.top = '30px';
+    }
 });
 
-
+// For every scholarship
 document.querySelectorAll('div.views-row').forEach(item => {
     const link = item.querySelector('a');
 
@@ -165,6 +159,8 @@ document.querySelectorAll('div.views-row').forEach(item => {
         const href = link.getAttribute('href');
 
         item.addEventListener('click', function() {
+
+            // Keeps track of the active award
             const otherActive = item.parentElement.querySelector('.active-award');
             item.classList.toggle('active-award');
 
@@ -172,41 +168,48 @@ document.querySelectorAll('div.views-row').forEach(item => {
                 if (otherActive) {
                   otherActive.classList.remove('active-award');
                 }
-                fetch(`${link.href}`)  // Replace with your URL
-                .then(response => response.text())  // Parse the response as text (HTML)
+
+                fetch(`${link.href}`)  // Fetch the scholarship page
+                .then(response => response.text())  
                 .then(html => {
-                  // Create a temporary DOM element to hold the fetched HTML
-                  const tempDiv = document.createElement('div');
-                  tempDiv.innerHTML = html;
 
-                  // Extract the specific div from the returned HTML
-                  const headerDiv = tempDiv.querySelector('.uw-site--title');  // Adjust selector as needed
-                  const contentDiv = tempDiv.querySelector('.content_node');
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = html;
 
-                  viewAwardPane.innerHTML = '';
-                  // Check if the div exists and insert it into the container
-                  if (headerDiv && contentDiv) {
-                      const h1Elements = headerDiv.querySelectorAll('h1');  // Get all <h1> elements inside the div
-                      h1Elements.forEach(h1 => {
-                          const h2 = document.createElement('h2');  // Create a new <h2> element
-                          h2.innerHTML = h1.innerHTML;              // Copy the content from <h1> to <h2>
-                          h1.parentNode.replaceChild(h2, h1);
-                      });
+                    // Extract the header and content from the returned HTML
+                    const headerDiv = tempDiv.querySelector('.uw-site--title');  
+                    const contentDiv = tempDiv.querySelector('.content_node');
 
-                      const closeButton = document.createElement('div');
-                      closeButton.classList.add('close');
-                      closeButton.innerHTML = '×';  // '×' is a common close symbol
-                      // Step 5: Add event listener to remove the header when clicked
-                      closeButton.addEventListener('click', () => {
-                          item.classList.remove('active-award');
-                          wrapper.style.display = 'none';
-                          wrapper.style.zIndex = '-10';  // Hides the header when the button is clicked
-                      });
-                      viewAwardPane.appendChild(headerDiv);
-                      viewAwardPane.appendChild(closeButton);
-                      viewAwardPane.appendChild(contentDiv);
-                      wrapper.style.display = 'block';
-                      wrapper.style.zIndex = '10';
+                    viewAwardPane.innerHTML = '';
+
+                    // Check if the div exists and insert it into the container
+                    if (headerDiv && contentDiv) {
+
+                        // Formats header of side panel
+                        const h1Elements = headerDiv.querySelectorAll('h1');  
+                        h1Elements.forEach(h1 => {
+                            const h2 = document.createElement('h2');  
+                            h2.innerHTML = h1.innerHTML;             
+                            h1.parentNode.replaceChild(h2, h1);
+                        });
+
+                        // Creates close button
+                        const closeButton = document.createElement('div');
+                        closeButton.classList.add('close');
+                        closeButton.innerHTML = '×';  
+
+                        closeButton.addEventListener('click', () => {
+                            item.classList.remove('active-award');
+                            wrapper.style.display = 'none';
+                            wrapper.style.zIndex = '-10';  
+                        });
+
+                        // Appends divs to side panel
+                        viewAwardPane.appendChild(headerDiv);
+                        viewAwardPane.appendChild(closeButton);
+                        viewAwardPane.appendChild(contentDiv);
+                        wrapper.style.display = 'block';
+                        wrapper.style.zIndex = '10';
                   }else{
                       viewAwardPane.innerHTML = defaultHtml;
                       console.log('Target div not found.');
@@ -217,7 +220,7 @@ document.querySelectorAll('div.views-row').forEach(item => {
                 });
             }else{
                 wrapper.style.display = 'none';
-                wrapper.style.zIndex = '-10';  // Hides the header when the button is clicked
+                wrapper.style.zIndex = '-10';  
             }
         });
     } else {
